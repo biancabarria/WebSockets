@@ -21,10 +21,6 @@ app.use("/", express.static('public'))
 app.set("view engine", "hbs")
 app.set("views", "./hbs_views")
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html')
-})
-
 const httpServer = new HttpServer(app)
 const ioServer = new IOServer(httpServer)
 
@@ -34,9 +30,9 @@ ioServer.on('connection', (socket) => {
     
     // Para añadir nuevos productos a nuestra página
     socket.on("new_product", (producto) => {
-        const index = 0
+        let index = 0
         if (products.length == 0) {
-            index++
+            index = 1
         }
         else {
             index = products[products.length - 1].id + 1
