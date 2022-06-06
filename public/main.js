@@ -17,17 +17,17 @@ const enviarMensaje = () => {
 
 const cargarProducto = () => {
   const id = 0;
-  const title = document.getElementById("title").value;
+  const name = document.getElementById("name").value;
   const price = document.getElementById("price").value;
   const thumbnail = document.getElementById("thumbnail").value;
   const producto = {
     id,
-    title,
+    name,
     price,
     thumbnail
   };
   socket.emit('new_product', producto);
-  document.getElementById("title").value = '';
+  document.getElementById("name").value = '';
   document.getElementById("price").value = '';
   document.getElementById("thumbnail").value = '';
   return false;
@@ -51,14 +51,14 @@ const crearEtiquetasMensaje = (mensaje) => {
 const crearEtiquetasProductos = (producto) => {
   const {
     id,
-    title,
+    name,
     price,
     thumbnail
   } = producto;
   return `
   <tr>
     <td>${id}</td>
-    <td>${title}</td>
+    <td>${name}</td>
     <td>$ ${price}</td>
     <td><img style="width: 50px; height:50px" src=${thumbnail} alt=""></td>
   </tr>
@@ -72,12 +72,12 @@ const agregarMensajes = (mensajes) => {
 }
 
 const agregarProductos = (productos) => {
-  const headtable = `<header class="p-3 bg-dark text-white text-center"><h1>Productos agregados</h1></header>
-  <table class="table table-success table-striped-columns">
+  const headtable = `<header class="p-3 bg-dark text-white text-center"><h5>Productos agregados</h1></header>
+  <table class="table table-bordered">
     <thead>
         <th>ID</th>
-        <th>Title</th>
-        <th>Price</th>
+        <th>Nombre</th>
+        <th>Precio</th>
         <th>Thumbnail</th>
     </thead>
     </tr>`
