@@ -35,21 +35,21 @@
   <body>
     <form onsubmit="return enviarMensaje()">
       <div class="card">
-        <div class="card-header text-center" style="background-color: #f8f9c5">
-          Centro de Mensajes
+        <div class="card-header">
+          Centro de mensajes
         </div>
         <div id="messages"></div>
-        <div class="card-body" style="background-color: #ffcef8">
-          <div class="col-2">
+        <div class="card-body">
+          <div class="mb-3">
             <label for="author" class="form-label">Email</label>
             <input type="text" name="author" id="author" required class="form-control"/>
           </div>
-          <div class="col-6">
+           <div class="mb-3">
             <label for="text" class="form-label">Message</label>
             <input type="text" name="text" id="text" required class="form-control"/>
           </div>
           <div class="card-footer text-center">
-            <button class="btn btn-primary text-center" type="submit">Enviar Mensaje</button>
+            <button class="btn btn-success" type="submit">Enviar</button>
           </div>
         </div>
     </form>
