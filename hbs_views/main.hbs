@@ -3,26 +3,25 @@
   <body>
     <form onsubmit="return cargarProducto()" id="miForm">
       <div class="card">
-        <div class="card-header text-center" style="background-color: #f8f9c5">
-          Carga de productos
+        <div class="card-header">
+          Formulario para ingresar productos
         </div>
-        <div class="card-body" style="background-color: #ffcef8">
-          <div class="col-4">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" name="title" id="title" class="form-control" />
+        <div class="card-body">
+          <h5 class="card-title">Ingrese producto:</h5>
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" name="name" id="name" class="form-control" />
           </div>
-          <div class="col-2">
-            <label for="price" class="form-label">Price</label>
+          <div class="mb-3">
+            <label for="price" class="form-label">Precio</label>
             <input type="input" name="price" id="price" class="form-control" aria-describedby="priceHelp" />
-            <div id="priceHelp" class="form-text" style="color: red">*Price in
-              dollars</div>
           </div>
-          <div class="col-12">
-            <label for="thumbnail">Thumbnail</label>
+          <div class="mb-3">
+            <label for="thumbnail">Foto URL</label>
             <input type="input" name="thumbnail" id="thumbnail" class="form-control" />
           </div>
-          <div class="card-footer text-center">
-            <button class="btn btn-primary text-center" type="submit">Agregar</button>
+          <div>
+          <button class="btn btn-success" type="submit">Agregar</button>
           </div>
         </div>
       </div>
